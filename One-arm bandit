@@ -1,4 +1,4 @@
-根据fcc联系制作的一个简单的老虎机
+根据fcc练习制作的一个简单的老虎机
 javascript:
 <script>
   function runSlots() {

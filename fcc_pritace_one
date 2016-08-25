@@ -61,7 +61,6 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 5. Check for Palindromes
 判断字符串是否为回文
 function palindrome(str) {
-  // Good luck!
   //设置一个字符串忽略标点符号、大小写和空格
   var strRep = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
   //设置是否可以反着读

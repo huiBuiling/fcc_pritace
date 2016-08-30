@@ -28,19 +28,3 @@ function titleCase(str) {
 }
 titleCase("I'm a little tea pot");  
 
-3. Return Largest Numbers in Arrays
-大数组中包含了4个小数组，分别找到每个小数组中的最大值，然后把它们串联起来，形成一个新数组。
-function largestOfFour(arr) {
-  var newStr = [];
-  for(var i =0 ; i< arr.length; i++){
-    //将每组数组排序，由大到小
-    arr[i].sort(function (a,b){
-      return b-a;
-    });
-    //将每个数组里的最大值赋到新的数组里
-    newStr.push(arr[i][0]);
-  }
-  return newStr;
-
-}
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);

@@ -139,8 +139,32 @@ function bouncer(arr) {
   var filtered = arr.filter(isBoolean);
   return filtered;
   //return arr.filter(Boolean);  一句代码就搞定了~~~~~~~~~~~~~~~~~
+  //或者~~~~~~~~~
+  //return arr.filter(function(item,index,array){
+  //  return Boolean(item);
+  //});
 }
-bouncer([7, "ate", "", false, 9]); //应该返回 [7, "ate", 9].
-bouncer(["a", "b", "c"]); //应该返回 ["a", "b", "c"]
-bouncer([false, null, 0, NaN, undefined, ""]); //应该返回 [].
-bouncer([1, null, NaN, 2, undefined]); //应该返回 [1, 2].
+bouncer([7, "ate", "", false, 9]); //[7, "ate", 9].
+bouncer(["a", "b", "c"]); //["a", "b", "c"]
+bouncer([false, null, 0, NaN, undefined, ""]); // [].
+bouncer([1, null, NaN, 2, undefined]); // [1, 2].
+
+11. Seek and Destroy
+金克斯的迫击炮！
+实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。
+
+function destroyer(arr) {
+  var args = [];
+  for(var i = 1; i < arguments.length; i++){
+    args.push(arguments[i]);
+  }
+  var temp = arr.filter(function(item,index,array){
+    return args.indexOf(item) < 0;
+  });
+  return temp;
+}
+destroyer([1, 2, 3, 1, 2, 3], 2, 3); //[1, 1].
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3); // [1, 5, 1].
+destroyer([3, 5, 1, 2, 2], 2, 3, 5); //  [1].
+destroyer([2, 3, 2, 3], 2, 3); //[].
+destroyer(["tree", "hamburger", 53], "tree", 53); // ["hamburger"].

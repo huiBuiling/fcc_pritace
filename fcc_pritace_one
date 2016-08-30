@@ -86,5 +86,27 @@ palindrome("eye");
     }
     return newNum;
 }
-factorialize(5);）
+factorialize(5);
+
+7. Chunky Monkey
+猴子吃香蕉可是掰成好几段来吃哦！
+function chunk(arr, size) {
+  var newStr = [];
+  for(var i =0 ;i< arr.length; i= i+size){
+    var newStr2 = arr;
+    newStr.push(newStr2.slice(i,i+size));
+    
+  }
+  return newStr;
+}
+chunk(["a", "b", "c", "d"], 2);
+
+8. Slasher Flick
+打不死的小强！
+function slasher(arr, howMany) {
+  var newStr2 = arr.splice(howMany);
+  return newStr2;
+}
+slasher([1, 2, 3], 2);
+
 
